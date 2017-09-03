@@ -1,4 +1,7 @@
 # Side-Learning
+- Overview of machine learning methods:
+  - https://docs.google.com/spreadsheets/d/1lOBXArptpihQ3WFSC6C6D1X9e4KPZjYbLoU6v3XtbTw/edit?usp=sharing
+
 - NLP:
   - Notes based on Stanford's NLP overview course from coursera in 2012
     - https://www.youtube.com/playlist?list=PLqNqLI7n_fDbisqKkkAzrFpWQOg8E6KEf
