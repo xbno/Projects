@@ -1,13 +1,15 @@
 # Side-Learning
 This is the repo where I will be saving my projects and ongoing learning. Some have been inspired by Kaggle others are inspired by courses or tutorials I've found online.
 
-While I am excited to continue learning classic ML algorithms for data science projects I have also been learning keras and exploring deep learning in computer vision and natural language processing. In doing so I've built my own gpu server at home which has made the learning rate so much quicker. 
+While I am excited to continue learning classic ML algorithms for data science projects I have also been learning keras and exploring deep learning in computer vision and natural language processing. In doing so I've built my own gpu server at home which has made the learning rate so much quicker.
 
-- Cats_Dogs_Redux
-  - Notebooks to explore and produce top 25% score on Kaggle
+- Cats_Dogs_Redux - Notebooks to explore and produce top 25% score on Kaggle
+  - Things learned:
+    - Data augmentation, the value of a sample set, finetuning, the effects of different initializers and learning rates, convolutional architectures (VGG, ResNet, Inception), batch training and loading from directory, working with data larger than working memory (both gpu and ram), ensembling, predicting and evaluating model performance, saving/loading model weights, how to build a linux gpu box and how to configure ssh
   - https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/discussion/27613
-- Mnist
-  - Multiple notebooks learning NNs with Mnist and Fashion Mnist datasets
+- Mnist - Multiple notebooks learning NNs with Mnist and Fashion Mnist datasets
+  - Things learned:
+    - The affect of size of data as it relates to ability of model to learn, how convolutions work, how to construct autoencoders, reshaping input data, batchnorm
 - Overview of machine learning methods:
   - https://docs.google.com/spreadsheets/d/1lOBXArptpihQ3WFSC6C6D1X9e4KPZjYbLoU6v3XtbTw/edit?usp=sharing
 - NLP Notes
