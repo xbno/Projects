@@ -1,4 +1,8 @@
 # Side-Learning
+This is the repo where I will be saving my projects and ongoing learning. Some have been inspired by Kaggle others are inspired by courses or tutorials I've found online.
+
+While I am excited to continue learning classic ML algorithms for data science projects I have also been learning keras and exploring deep learning in computer vision and natural language processing. In doing so I've built my own gpu server at home which has made the learning rate so much quicker. 
+
 - Cats_Dogs_Redux
   - Notebooks to explore and produce top 25% score on Kaggle
   - https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/discussion/27613
