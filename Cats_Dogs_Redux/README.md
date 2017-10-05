@@ -1,6 +1,6 @@
 # Cats and Dogs Redux Competition on Kaggle
 
-This project was inspired by the Fast-Ai course. I've modified th notebooks to suit my needs which includes all notebooks that helped me score a .08891 on the public leaderboard. This was my first try at using Convnets and I'm happy with the results yet there is much to learn!
+This project was inspired by the Fast-Ai course. I've modified th notebooks to suit my needs which includes all notebooks that helped me score a .08616 on the public leaderboard. This was my first try at using Convnets and I'm happy with the results yet there is much to learn!
 
 In addition, I upgraded my home workstation from a windows10 pc to ubuntu 16.04. This took a bit of work but overall gives me far more freedom in terms of package requirements and now I can ssh and run remote jupyter notebooks from anywhere I am.
 
