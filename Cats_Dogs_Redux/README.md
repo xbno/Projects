@@ -10,9 +10,11 @@ My machine:
 Notebooks:
   - 01-sample
     - Creates a sample set based on the data directory structure shown below
-  - 02-prototype
-    - My attempts at a few architectures. All are finetuned version of VGG16
+  - 02-prototype-vgg
+    - My attempts at a few architectures. Finetuned versions of vgg16
+  - 02-prototype-resnet
+    - Again, trying out different finetuned versions, this time of resnet
   - 03-ensemble
     - Choose a selected prototype and create 3 models trained on the full dataset. This caused difficulty for my machine as the kernel will fail when multiple models are constructed/run.
-  - 04-finetune
+  - 04-finetuned-vgg
     - I also tried my hand at creating a single model which performed better than the ensemble I created. This should be rolled back into the ensemble technique to get a better score.
