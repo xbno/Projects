@@ -324,3 +324,66 @@ class k_nearest_neighbors(object):
         if self.ties:
             print('{} ties'.format(self.tie_count))
         return y_pred
+
+class kmeans():
+    def __init__(self, num_centroids=4, max_iter=1000):
+        self.num_centroids = num_centroids
+        self.max_iter = max_iter
+        self.metric = metric
+        
+    def euclidean(self, a, b):
+        return np.sqrt(((a-b)**2).sum(axis=0))
+
+    def manhattan(self, a, b):
+        return np.abs((a-b).sum(axis=0))
+
+    def init_centroids(self):
+        centroids = {}
+        for k in range(self.num_centroids):
+            centroids[k] = self.X[np.random.randint(self.X.shape[0])]
+        return centroids
+
+    def dist_from_centroid(self):
+        self.dist_from = np.array([]).reshape(0,self.X.shape[0])
+        if self.metric == 'euclidean':
+            for k in self.centroids.keys():
+                dist = np.array([])
+                for i in range(self.X.shape[0]):
+                    dist = np.append(dist,self.euclidean(self.centroids[k],self.X[i]))
+                self.dist_from = np.vstack((self.dist_from,dist))
+
+    def label(self):
+        self.labels = np.argwhere(self.dist_from == np.min(self.dist_from,axis=0))
+        if self.labels.shape[0] != self.X.shape[0]:
+            idx = np.where(np.unique(self.labels[:,1], return_counts=True)[1] == 2)
+            duplicate_asignments = np.where(self.labels[:,1] == idx)[1]
+            for i, dup in enumerate(duplicate_asignments):
+                if i == 0:
+                    self.labels = np.delete(self.labels,dup,axis=0)
+        #print(self.labels)
+
+    def recenter(self):
+        for k in self.centroids.keys():
+            self.centroids_hist[k] = self.centroids[k]
+            self.centroids[k] = self.X[self.labels[:,0] == k].mean(axis=0)
+
+    def stop(self):
+        if self.iterations > self.max_iter:
+            return True
+        for k in centroids.keys():
+            if np.array_equal(km.centroids_hist[k], km.centroids[k]):
+                return True
+        return False
+
+    def fit(self, X):
+        self.X = X
+        self.centroids = self.init_centroids()
+        self.centroids_hist = self.init_centroids()
+        self.iterations = 0
+
+        #while not self.stop():#self.iterations < self.max_iter:
+        while self.iterations < self.max_iter:
+            self.dist_from_centroid()
+            self.label()
+            self.recenter()
+            self.iterations += 1
