@@ -231,4 +231,4 @@ def forecasts():
         return data.loc[wk_start:wk_end].to_json(date_format='iso')
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=80, debug=True)
+    app.run(host='192.168.1.170', port=80, debug=True)
