@@ -13,6 +13,13 @@ I've also created an [overview of machine learning methods](https://docs.google.
   - Things learned:
     - Data augmentation, the value of a sample set, finetuning, the effects of different initializers and learning rates, convolutional architectures (VGG, ResNet, Inception), batch training and loading from directory, bottleneck training, working with data larger than working memory (both gpu and ram), ensembling, predicting and evaluating model performance, saving/loading model weights, how to build a linux gpu box and how to configure ssh, port forwarding, ddns for public ip,
   - [Kaggle Page](https://www.kaggle.com/c/dogs-vs-cats-redux-kernels-edition/discussion/27613)
+- Flask API
+  - Things learned:
+    - Curl, host a webapp, GET and POST requests, structure a RESTful API, create a html form, send POST requests via html logic, port forwarding
+  - GET requests to pull forecast and product data
+    - Filters based on sku(s), wk_range(s), product category(s)
+  - POST requests to update underlying forecast data
+    - HTML table/form GUI to update future forecast values
 - Mnist - Multiple notebooks learning NNs with Mnist and Fashion Mnist datasets
   - Things learned:
     - The affect of size of data as it relates to ability of model to learn, how convolutions work, how to construct autoencoders, input shapes and reshaping data, batchnorm
