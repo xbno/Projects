@@ -20,18 +20,18 @@ To go to the web gui and filter based on categories use this format. Update a fo
 Clone the repo and install the following dependencies on top of a standard Anaconda python 3 environment:
 
 
-'''bash
+```bash
 $ pip install formencode
 $ pip install flask
-'''
+```
 
 
 
-To run the app, navigate to the Flask API directory within terminal and type '''bash sudo python v1_api.py'''. Then to access the api type 'http://192.168.1.170/' followed by the resource you want to use. *Note* you may need to specify which python using sudo, for example:
+To run the app, navigate to the Flask API directory within terminal and type `sudo python v1_api.py`. Then to access the api type 'http://192.168.1.170/' followed by the resource you want to use. *Note* you may need to specify which python using sudo, for example:
 
-'''bash
+```bash
 $ sudo /home/$USER/anaconda3/bin/python v1_api.py
-'''
+```
 
 
 
