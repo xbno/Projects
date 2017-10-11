@@ -1,10 +1,8 @@
-# API assignment for an interview
-
-Requirements:
-
+# API coding challenge
 
 ---
-Access:
+### Access:
+
 I'm hosting the API from personal server, so to access it go to the address below.
 
 To see the forecast of all products in category2 and category3 type:
@@ -17,9 +15,10 @@ To go to the web gui and filter based on categories use this format. Update a fo
   - http://lc30.ddns.net:80/api/v1.0/skus/forecasts/table?cat=cat1
 
 ---
-Host Locally:
+### Host Locally:
 
 Clone the repo and install the following dependencies on top of a standard Anaconda python 3 environment:
+
   pip install formencode
   pip install flask
 
