@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <title>Staples, API</title>
+</head>
+
+   <body>
+
+      <table border = 1>
+        <tr>
+          <td colspan="1">&nbsp;</td>
+          <td colspan="3"> Actual </td>
+          <td colspan="1"> Current </td>
+          <td colspan="7"> Forecast </td>
+          <td colspan="1"> Projection </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          {% for timestamp in result['columns'] %}
+            <td> {{timestamp}} </td>
+          {% endfor %}
+        </tr>
+         {% for val in result['data'] %}
+            {% if result['index'][loop.index0] != 'Category' %}
+            <tr>
+               <th> {{ result['index'][loop.index0] }} </th>
+               {% for i in val %}
+                  {% if loop.index0 < 4 %}
+                        <td> {{ i }} </td>
+                  {% endif %}
+                  {% if loop.index0 > 4 %}
+                  <td><input type="text" value={{ i }} ></td>
+                  {% endif %}
+
+               {% endfor %}
+            </tr>
+            {% endif %}
+            {% if result['index'][loop.index0] == 'Category' %}
+            <tr>
+               <th> {{ result['index'][loop.index0] }} </th>
+               {% for i in val %}
+                  <td> {{ i }} </td>
+               {% endfor %}
+            </tr>
+            {% endif %}
+         {% endfor %}
+      </table>
+
+   </body>
+</html>

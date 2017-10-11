@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+   <body>
+
+      <table border = 1>
+
+        <tr>
+          <td>&nbsp;</td>
+          {% for timestamp in result['columns'] %}
+
+            <td> {{timestamp}} </td>
+          {% endfor %}
+        </tr>
+
+         {% for sku in result['index'] %}
+            <tr>
+               <th> {{ sku }} </th>
+               {% for val in result['data'] %}
+                  <td> {{ val }} </td>
+               {% endfor %}
+            </tr>
+
+         {% endfor %}
+      </table>
+
+   </body>
+</html>

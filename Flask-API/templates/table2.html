@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+   <body>
+
+      <table border = 1>
+        <tr>
+          <td colspan="1">&nbsp;</td>
+          <td colspan="3"> Actual </td>
+          <td colspan="1"> Current </td>
+          <td colspan="7"> Forecast </td>
+          <td colspan="1"> Projection </td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          {% for timestamp in result['columns'] %}
+            <td> {{timestamp}} </td>
+          {% endfor %}
+        </tr>
+         {% for val in result['data'] %}
+            <tr>
+               <th> {{ result['index'][loop.index0] }} </th>
+               {% for i in val %}
+                  <td> {{ i }} </td>
+               {% endfor %}
+            </tr>
+
+         {% endfor %}
+      </table>
+
+   </body>
+</html>
