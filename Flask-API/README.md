@@ -3,10 +3,14 @@
 ---
 ### Access:
 
-I'm hosting the API from personal server, so to access it go to the address below.
+I'm hosting the API from personal server. To access it go to the address below.
 
-To see the forecast of all products in category2 and category3 type:
-  - http://lc30.ddns.net:80/api/v1.0/skus/forecasts?cat=cat2,cat3
+To see the forecast of all products in category2:
+  - http://lc30.ddns.net:80/api/v1.0/skus/forecasts?cat=cat2
+
+To see the forecast of skus 1, 2, 3, 5, and 9 on week 10-1-2017:
+
+- http://lc30.ddns.net/api/v1.0/skus/forecasts?wk_range=2017-10-01&skus=1,2,3,5,9
 
 To filter based on a select week or range of weeks with certain sku(s) enter those filters:
   - http://lc30.ddns.net:80/api/v1.0/skus/forecasts?wk_range=2017-08-01,2017-10-01&skus=1
