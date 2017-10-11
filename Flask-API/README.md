@@ -19,10 +19,21 @@ To go to the web gui and filter based on categories use this format. Update a fo
 
 Clone the repo and install the following dependencies on top of a standard Anaconda python 3 environment:
 
-  pip install formencode
-  pip install flask
 
-To run the app, navigate to the Flask API directory within terminal and type 'sudo python v1_api.py'. Then to access the api type 'http://192.168.1.170/' followed by the resource you want to use. *Note* you may need to specify which python using sudo, for example: sudo /home/$USER/anaconda3/bin/python v1_api.py
+'''bash
+$ pip install formencode
+$ pip install flask
+'''
+
+
+
+To run the app, navigate to the Flask API directory within terminal and type '''bash sudo python v1_api.py'''. Then to access the api type 'http://192.168.1.170/' followed by the resource you want to use. *Note* you may need to specify which python using sudo, for example:
+
+'''bash
+$ sudo /home/$USER/anaconda3/bin/python v1_api.py
+'''
+
+
 
 For example, to see the forecast of all products in category2 and category3 type:
   - http://192.168.1.170/api/v1.0/skus/forecasts?cat=cat2,cat3
