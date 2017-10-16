@@ -1,4 +1,4 @@
-# Side-Learning
+# Projects
 This is the repo where I will be saving my projects and ongoing learning. Some have been inspired by Kaggle others are inspired by courses or tutorials I've found online.
 
 I am excited to continue learning/using classic ML algorithms for data science projects and have also been learning keras and exploring deep learning in computer vision and natural language processing. In doing so, built my own gpu server at home which has made my neural net learning rate so much quicker.
