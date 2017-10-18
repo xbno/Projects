@@ -3,9 +3,7 @@
 ---
 ### Access:
 
-I'm hosting the API from personal server. To access it go to the address below.
-
-To see the forecast of all products in category2:
+I'm hosting the API from a personal server, to access follow the links below. For the gui version:
   - http://lc30.ddns.net:80/api/v1.0/skus/forecasts?cat=cat2
 
 To see the forecast of skus 1, 2, 3, 5, and 9 on week 10-1-2017:
