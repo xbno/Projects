@@ -4,7 +4,8 @@ import numpy as np
 import pandas as pd
 from datetime import datetime, timedelta
 from formencode import variabledecode
-
+import boto3
+from io import StringIO
 
 # create random data only first time
 # dates = pd.date_range('2017-07-23',periods=50, freq='W')
@@ -16,7 +17,17 @@ from formencode import variabledecode
 # data.columns = new_cols
 # data.to_csv('data.csv')
 
-data = pd.read_csv('data.csv',index_col=0,parse_dates=True)
+#data = pd.read_csv('data.csv',index_col=0,parse_dates=True)
+#data = pd.read_csv('https://s3.amazonaws.com/flaskapi/data.csv',index_col=0,parse_dates=True)
+
+#pull data from s3
+s3_bucket = 'flaskapi'
+s3_key = 'data.csv'
+s3_client = boto3.client('s3')
+response = s3_client.get_object(Bucket=s3_bucket,Key=s3_key)
+datafile = response['Body']
+
+data = pd.read_csv(datafile, index_col=0, parse_dates=True)
 
 #create random categories
 cats = {'cat1':['0','1','2','3'],'cat2':['4','5','6'],'cat3':['7','8','9']}
@@ -85,10 +96,18 @@ def table():
         for sku in overrides['skus'].keys():
             for date,val in overrides['skus'][sku].items():
                 data.loc[date][sku] = val
-        data.to_csv('data.csv')
+        #data.to_csv('data.csv')
+        #data.to_csv('https://s3.amazonaws.com/flaskapi/data.csv')
+
+        #push data to s3
+        csv_buffer = StringIO()
+        data.to_csv(csv_buffer)
+        s3_resource = boto3.resource('s3')
+        s3_resource.Object(s3_bucket, s3_key).put(Body=csv_buffer.getvalue())
 
         #return jsonify(overrides)
         return redirect(request.referrer)
+        #return render_template('table4.html', result = output)
 
     if cat:
         skus = cats[cat]
@@ -139,7 +158,12 @@ def forecasts():
         for sku in overrides['skus'].keys():
             for date,val in overrides['skus'][sku].items():
                 data.loc[date][sku] = val
-        data.to_csv('data.csv')
+        #data.to_csv('data.csv')
+
+        csv_buffer = StringIO()
+        data.to_csv(csv_buffer)
+        s3_resource = boto3.resource('s3')
+        s3_resource.Object(s3_bucket, s3_key).put(Body=csv_buffer.getvalue())
         return '\npost successful! \n\n'
 
     if cat and wk_range and price:
@@ -231,4 +255,11 @@ def forecasts():
         return data.loc[wk_start:wk_end].to_json(date_format='iso')
 
 if __name__ == "__main__":
-    app.run(host='192.168.1.170', port=80, debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
+    #app.run(host='192.168.1.170', port=80, debug=True)
+
+# curl -d '{"skus":{"0":{"2017-07-23": "0","2017-07-30": "0"}}}' -H "Content-Type: application/json" -X POST https://mm6dgpsa77.execute-api.us-east-1.amazonaws.com/dev/api/v1.0/skus/forecasts
+#
+# https://mm6dgpsa77.execute-api.us-east-1.amazonaws.com/dev/api/v1.0/skus/forecasts/table?cat=cat1
+#
+# https://mm6dgpsa77.execute-api.us-east-1.amazonaws.com/api/v1.0/skus/forecasts/table
