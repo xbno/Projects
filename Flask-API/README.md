@@ -3,18 +3,17 @@
 ---
 ### Access:
 
-I'm hosting the API from a personal server, to access follow the links below. For the gui version:
-  - http://lc30.ddns.net:80/api/v1.0/skus/forecasts?cat=cat2
+I'm hosting the API from a local server, to access follow the links below. To go to the [web gui](http://lc30.ddns.net:80/api/v1.0/skus/forecasts/table?cat=cat1) and filter based on categories use this format. Update a forecast by modifying a value in an editable cell and then press 'Update Values'
+  - http://lc30.ddns.net:80/api/v1.0/skus/forecasts/table?cat=cat1
 
 To see the forecast of skus 1, 2, 3, 5, and 9 on week 10-1-2017:
-
-- http://lc30.ddns.net/api/v1.0/skus/forecasts?wk_range=2017-10-01&skus=1,2,3,5,9
+  - http://lc30.ddns.net/api/v1.0/skus/forecasts?wk_range=2017-10-01&skus=1,2,3,5,9
 
 To filter based on a select week or range of weeks with certain sku(s) enter those filters:
   - http://lc30.ddns.net:80/api/v1.0/skus/forecasts?wk_range=2017-08-01,2017-10-01&skus=1
 
-To go to the web gui and filter based on categories use this format. Update a forecast by modifying a value in an editable cell and then press 'Update Values'
-  - http://lc30.ddns.net:80/api/v1.0/skus/forecasts/table?cat=cat1
+Or to filter based on a single category of skus:
+  - http://lc30.ddns.net:80/api/v1.0/skus/forecasts?cat=cat2
 
 ---
 ### Host Locally:
@@ -23,8 +22,7 @@ Clone the repo and install the following dependencies on top of a standard Anaco
 
 
 ```bash
-$ pip install formencode
-$ pip install flask
+$ pip install formencode flask
 ```
 
 
