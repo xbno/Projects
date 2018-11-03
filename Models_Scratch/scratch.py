@@ -330,7 +330,7 @@ class kmeans():
         self.num_centroids = num_centroids
         self.max_iter = max_iter
         self.metric = metric
-        
+
     def euclidean(self, a, b):
         return np.sqrt(((a-b)**2).sum(axis=0))
 
